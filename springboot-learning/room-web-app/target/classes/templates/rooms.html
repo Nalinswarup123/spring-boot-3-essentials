@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Landon Hotel | Rooms</title>
+</head>
+<header>
+    <a th:href="@{/}" href="#"></a>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out">
+    </form>
+</header>
+<body>
+    <table>
+        <tr>
+            <th>Room Number</th>
+            <th>Room Name</th>
+            <th>Bed Info</th>
+        </tr>
+        <tr th:each="room:${rooms}">
+            <td th:text="${room.number}"></td>
+            <td th:text="${room.name}"></td>
+            <td th:text="${room.info}"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
